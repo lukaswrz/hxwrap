@@ -1,7 +1,7 @@
 {
   description = "A wrapper for Helix that provides language support";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
   outputs = {nixpkgs, ...}: let
     supportedSystems = nixpkgs.lib.systems.flakeExposed;
