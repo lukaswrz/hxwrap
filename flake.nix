@@ -25,6 +25,7 @@
           postBuild = ''
             wrapProgram $out/bin/${package.meta.mainProgram} \
               --suffix PATH : ${pkgs.lib.makeBinPath (builtins.attrValues {
+              # Language support
               inherit
                 (pkgs)
                 # LSP
@@ -86,6 +87,11 @@
                 (pkgs.ocamlPackages)
                 # LSP
                 ocaml-lsp
+                ;
+              # Clipboard support
+              inherit
+                (pkgs)
+                wl-clipboard
                 ;
             })}
           '';
