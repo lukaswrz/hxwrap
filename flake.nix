@@ -66,7 +66,6 @@
                 intelephense
                 svelte-language-server
                 typescript-language-server
-                vls
                 ;
               inherit
                 (pkgs.rubyPackages)
