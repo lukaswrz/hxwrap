@@ -1,6 +1,9 @@
 {
   helix,
+
   symlinkJoin,
+  makeWrapper,
+
   pkgs,
 }: let
   languageServers = [
@@ -96,7 +99,7 @@ in
 
     paths = [helix];
 
-    buildInputs = [pkgs.makeWrapper];
+    buildInputs = [makeWrapper];
 
     postBuild = ''
       wrapProgram $out/bin/${helix.meta.mainProgram} \
