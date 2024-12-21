@@ -26,8 +26,6 @@
     pkgs.rust-analyzer
     # Zig
     pkgs.zls
-    # PHP
-    pkgs.nodePackages_latest.intelephense
     # TypeScript
     pkgs.nodePackages_latest.typescript-language-server
     # Bash
