@@ -31,7 +31,16 @@
         nixosConfigurations = self.lib.genNixosConfigurations {inherit inputs;};
       };
 
-      perSystem = {pkgs, ...}: {
+      perSystem = {
+        pkgs,
+        system,
+        ...
+      }: {
+        _module.args.pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+
         devenv.shells.default = {
           devenv.root = let
             devenvRootFileContent = builtins.readFile devenv-root.outPath;
