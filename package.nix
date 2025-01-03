@@ -20,8 +20,8 @@
     # Nix
     pkgs.nil
     # Python
-    pkgs.python3Packages.python-lsp-server
-    pkgs.python3Packages.python-lsp-ruff
+    pkgs.basedpyright
+    pkgs.ruff
     # Rust
     pkgs.rust-analyzer
     # Zig

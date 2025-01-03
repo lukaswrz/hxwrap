@@ -15,5 +15,3 @@ Or install it via `nix profile`:
 ```bash
 nix profile install github:lukaswrz/hxwrap
 ```
-
-test
