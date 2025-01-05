@@ -61,7 +61,7 @@
   ];
 in
   symlinkJoin {
-    name = helix.pname;
+    inherit (helix) pname version meta;
 
     paths = [helix];
 
@@ -73,6 +73,4 @@ in
         languageServers ++ debugAdapters ++ clipboardProviders
       )}
     '';
-
-    inherit (helix) meta;
   }
