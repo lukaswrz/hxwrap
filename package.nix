@@ -38,8 +38,6 @@
 
     # Markdown
     pkgs.marksman
-    # Markdown zk
-    pkgs.zk
     # LaTeX
     pkgs.texlab
     # Typst
