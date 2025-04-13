@@ -61,7 +61,7 @@
   ];
 in
   symlinkJoin {
-    inherit (helix) pname version meta;
+    inherit (helix) pname version meta passthru;
 
     paths = [helix];
 
