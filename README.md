@@ -7,11 +7,11 @@ A wrapper for Helix that provides language support.
 Run it:
 
 ```bash
-nix run github:lukaswrz/hxwrap
+nix run git+https://codeberg.org/helveticanonstandard/hxwrap.git
 ```
 
 Or install it via `nix profile`:
 
 ```bash
-nix profile install github:lukaswrz/hxwrap
+nix profile install git+https://codeberg.org/helveticanonstandard/hxwrap.git
 ```
