@@ -3,7 +3,8 @@
   symlinkJoin,
   makeWrapper,
   pkgs,
-}: let
+}:
+let
   languageServers = [
     # C & C++
     pkgs.clang-tools
@@ -60,17 +61,20 @@
     pkgs.wl-clipboard
   ];
 in
-  symlinkJoin {
-    inherit (helix) pname version meta passthru;
+symlinkJoin {
+  inherit (helix)
+    pname
+    version
+    meta
+    passthru
+    ;
 
-    paths = [helix];
+  paths = [ helix ];
 
-    buildInputs = [makeWrapper];
+  buildInputs = [ makeWrapper ];
 
-    postBuild = ''
-      wrapProgram $out/bin/${helix.meta.mainProgram} \
-        --suffix PATH : ${pkgs.lib.makeBinPath (
-        languageServers ++ debugAdapters ++ clipboardProviders
-      )}
-    '';
-  }
+  postBuild = ''
+    wrapProgram $out/bin/${helix.meta.mainProgram} \
+      --suffix PATH : ${pkgs.lib.makeBinPath (languageServers ++ debugAdapters ++ clipboardProviders)}
+  '';
+}
